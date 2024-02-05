@@ -5,14 +5,14 @@ import classes from './Home.module.css';
 import Button from '../UI/Button/Button';
 import AuthContext from '../store/auth-context';
 
-const Home = (props) => {
+const Home = () => {
   //this useContext hook can hold AuthContext Component object and acccess inside the Home Component 
-  //this contextApi can use specific component to send data and component and access the component actions without any props
-  let ctx = useContext(AuthContext)
+  //this contextApi can use specific component to send data and component and access the component actions without any 
+  let authctx = useContext(AuthContext)
   return (
     <Card className={classes.home}>
       <h1>Welcome back!</h1>
-      <Button onClick={ctx.onLogout}>Logout</Button>
+      <Button onClick={authctx.onLogout}>Logout</Button>
     </Card>
   );
 };
